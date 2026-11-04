@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Local caches / intermediate training artifacts (regenerable, depend on local datasets)
+models/d_image_dataset_cache.npz
+models/d_image_trained_head.npz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,13 @@
+{
+  "name": "san-web-onnx-tagger",
+  "version": "1.0.0",
+  "description": "Universal All-in-One ONNX Multi-Label Image Tagger (4,660 English Tags) for Unity Sentis & Microsoft ONNX Runtime Web (CPU)",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "build:vocab": "python scripts/build_tag_vocabulary.py",
+    "build:onnx": "python scripts/export_onnx_model.py",
+    "verify": "python scripts/verify_and_benchmark.py"
+  },
+  "license": "MIT"
+}
+

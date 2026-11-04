@@ -1,0 +1,67 @@
+{
+  "name": "SAN-Web Universal Multi-Label Image Tagger (Supervised & Calibrated v3.0)",
+  "version": "3.0.0",
+  "model_file": "models/san_tagger.onnx",
+  "labels_json": "models/labels.json",
+  "labels_txt": "models/labels.txt",
+  "size_bytes": 417546289,
+  "size_mb": 398.2,
+  "sha256": "53daed4d412d58cf2800649e6c261f8cabf4d12fd05ca23e5c752318e4e3a7fa",
+  "opset_version": 15,
+  "precision": "FP32",
+  "num_classes": 4660,
+  "calibration": {
+    "prompt_templates": 8,
+    "neutral_prompt_centered": true,
+    "residual_visual_adapter": "512->256->512",
+    "supervised_d_image_training": true,
+    "multi_domain_prototypes": 2679,
+    "dense_spatial_patch_fusion": true,
+    "subspace_centroid_debiased": true
+  },
+  "input": {
+    "name": "input",
+    "shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "dtype": "float32",
+    "format": "NCHW RGB normalized in [0.0, 1.0]"
+  },
+  "output": {
+    "name": "scores",
+    "shape": [
+      1,
+      4660
+    ],
+    "dtype": "float32",
+    "description": "Independent calibrated multi-label probability in [0.0, 1.0] for each tag"
+  },
+  "operators": [
+    "Add",
+    "Concat",
+    "Constant",
+    "Conv",
+    "Div",
+    "Identity",
+    "MatMul",
+    "Mul",
+    "ReduceMean",
+    "ReduceSum",
+    "Reshape",
+    "Sigmoid",
+    "Softmax",
+    "Sqrt",
+    "Sub",
+    "Transpose"
+  ],
+  "compatibility": {
+    "unity_sentis": true,
+    "onnxruntime_cpu": true,
+    "onnxruntime_web_wasm": true,
+    "estimated_peak_ram_mb": 637.1,
+    "max_memory_budget_mb": 4096
+  }
+}
