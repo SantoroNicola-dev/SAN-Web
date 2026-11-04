@@ -1,5 +1,6 @@
 # Normalize line endings for text files
 * text=auto
 
-# Large binary model files tracked with Git LFS
+# Large binary files tracked with Git LFS
 *.onnx filter=lfs diff=lfs merge=lfs -text
+models/d_image_trained_head.npz filter=lfs diff=lfs merge=lfs -text
